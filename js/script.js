@@ -631,6 +631,17 @@ function handlePrint(){
       `;
     }
   });
+  // PARCEL CHARGE PRINT - IDHA INGA ADD PANNU
+let parcelChargePrint = b.parcelCharge || 0;
+let parcelHTML = '';
+if(parcelChargePrint > 0){
+  parcelHTML = `
+    <div style="display:flex; justify-content:space-between; padding:4px 0; font-size:13px; border-top:1px dashed #000; margin-top:5px;">
+      <span>Parcel Charges</span>
+      <span>Rs. ${parcelChargePrint}.00</span>
+    </div>
+  `;
+}
 
   // Special lengthy case - Strawberry Falooda
   if(b.items.length===1 && b.items[0].name.includes("Strawberry")){
@@ -672,6 +683,7 @@ function handlePrint(){
   <div class="flex"><span style="font-size:14px;">Table</span><span>: ${b.tableNo}</span></div>
   <div class="line"></div>
   ${itemsHTML}
+  ${parcelHTML}
   <div class="flex bold" style="font-size:14px; border-top:2px solid #000; border-bottom:2px solid #000; padding:5px 0; margin:5px 0;"><span>TOTAL</span><span>Rs. ${b.total}.00</span></div>
   <div class="center" style="font-size:14px; margin-top:10px;">Thank you! Visit Again</div>
  <div class="line"></div>
