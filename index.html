@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MS Emporium - Billing - Exact Same Design</title>
+<title>MS Emporium - Menu</title>
 
 <link rel="icon" type="image/png" href="images/logo4.jpg">
 <link rel="shortcut icon" type="image/png" href="images/logo4.jpg">
@@ -26,14 +26,40 @@
       <small style="color:#ffffff !important; font-size:13px; font-weight:600;">Juices & Snacks</small>
     </div>
   </div>
-  <div><button class="btn btn-dark btn-sm" onclick="showPage('billing')"><i class="bi bi-receipt"></i> Billing</button> <button class="btn btn-outline-success btn-sm" onclick="showPage('saved')"><i class="bi bi-journal-text"></i> <span class="saved">Saved Bills</span> <span id="cnt" class="badge bg-success ms-1">0</span></button></div>
+  <div><button class="btn btn-dark btn-sm" onclick="showHome()">🏠 Home</button> <button class="btn btn-dark btn-sm" onclick="showPage('billing')"><i class="bi bi-receipt"></i> Menu</button> <button class="btn btn-outline-success btn-sm" onclick="showPage('saved')"><i class="bi bi-journal-text"></i> <span class="saved">Saved Bills</span> <span id="cnt" class="badge bg-success ms-1">0</span></button></div>
 </div>
 
 <div class="container-fluid p-3">
-  <div id="billingPage">
+
+  <!-- ===== PAGE 1 - HOME - Tables LEFT + Bill Box RIGHT (pakathulaiye) ===== -->
+  <div id="homePage">
     <div class="row">
       <div class="col-lg-7">
-        <div class="d-flex justify-content-between align-items-center mb-3"><h6 class="fw-bold m-0">Select Items</h6><input id="search" class="form-control form-control-sm" style="width:200px;border-radius: 30px;" placeholder="Search Items" onkeyup="doSearch()"></div>
+        <div class="d-flex justify-content-between align-items-center mb-3"><h6 class="fw-bold m-0">Select Table</h6><small class="text-muted">Table click panna Menu open aagum</small></div>
+        <div id="tablesHome" class="row g-2 mb-3"></div>
+      </div>
+      <div class="col-lg-5">
+      <div class="bill-box">
+        <div class="d-flex justify-content-between"><small class="text-muted">Bill No</small><b id="bnoHome">BILL001</b></div>
+        <div class="d-flex justify-content-between"><small class="text-muted">Date/Time</small><small id="dtHome"></small></div>
+        <div class="row mt-3">
+          <div class="col-6"><label class="small fw-bold">Bill Date 📅</label><input id="billDateHome" type="date" class="form-control form-control-sm"></div>
+          <div class="col-6"><label class="small fw-bold">Table Number</label><input id="tnoHome" class="form-control form-control-sm" placeholder="Table Number*" readonly></div>
+        </div>
+        <hr class="my-3">
+        <table class="table table-sm small mb-2"><thead><tr><th>S.NO</th><th>ITEM</th><th>QTY</th><th>PRICE</th><th></th></tr></thead><tbody id="cartBodyHome"><tr><td colspan="5" class="text-center text-muted py-3">Table select pannunga</td></tr></tbody></table>
+        <div class="d-flex justify-content-between align-items-center mt-2 p-2 rounded" style="background:#fef9c3;border:1px solid #facc15;"><span>📦 Parcel <small id="parcelInfoHome">0 clicks</small></span><span><button class="btn btn-sm btn-success" onclick="addParcel(5)">Rs. 5</button> <button class="btn btn-sm btn-success" onclick="addParcel(10)">Rs. 10</button> <span class="fw-bold">Rs.<span id="parcelAmtHome">0</span></span> <span onclick="clearParcel()" style="cursor:pointer">❌</span></span></div>
+        <div class="d-flex justify-content-between fw-bold border-top pt-2 mt-2"><span>Grand Total</span><span id="gtHome">Rs. 0</span></div>
+        <button class="btn btn-success w-100 mt-3" onclick="return saveAndPrint()"><i class="bi bi-save"></i> Save &amp; Print</button>
+        <div id="successMsgHome" style="display:none; background:#f0fdf4; border:2px solid #22c55e; color:#16a34a; padding:12px; border-radius:8px; font-weight:700; text-align:center; margin-top:12px;"></div>
+      </div>
+    </div></div>
+  </div>
+  <!-- ===== PAGE 2 - MENU (Existing Billing Design) ===== -->
+  <div id="billingPage" class="d-none">
+    <div class="row">
+      <div class="col-lg-7">
+        <div class="d-flex justify-content-between align-items-center mb-2"><button class="btn btn-dark btn-sm" onclick="showHome()">← Back to Home</button><span class="badge bg-warning text-dark fs-6" id="menuTableBadge">Table: -</span></div><div class="d-flex justify-content-between align-items-center mb-3"><h6 class="fw-bold m-0">Select Items</h6><input id="search" class="form-control form-control-sm" style="width:200px;border-radius: 30px;" placeholder="Search Items" onkeyup="doSearch()"></div>
         <div id="cats" class="d-flex flex-wrap mb-3"></div>
         <div id="grid" class="row g-2"></div>
       </div>
@@ -42,33 +68,17 @@
           <div class="d-flex justify-content-between"><small class="text-muted">Bill No</small><b id="bno">BILL001</b></div>
           <div class="d-flex justify-content-between"><small class="text-muted">Date/Time</small><small id="dt"></small></div>
           <div class="row mt-3">
-  <div class="col-6"><label class="small fw-bold">Bill Date 📅</label><input id="billDate" type="date" class="form-control form-control-sm" required style="border-color:#facc15;"></div>
-  <div class="col-6"><label class="small fw-bold">Table Number</label><input id="tno" class="form-control form-control-sm" placeholder="Table Number*" required style="border-color:#facc15;"></div>
+  <div class="col-6"><label class="small fw-bold">Bill Date 📅</label><input id="billDate" type="date" class="form-control form-control-sm" required></div>
+  <div class="col-6"><label class="small fw-bold">Table Number</label><input id="tno" class="form-control form-control-sm" placeholder="Table Number* - Home la Table click pannunga" readonly></div>
 </div>
           <div id="editBox" class="alert alert-warning py-1 px-2 small mt-2 d-none">Editing <span id="editBno"></span> - will update existing bill</div>
           <hr class="my-3">
           <table class="table table-sm small mb-2"><thead><tr><th>S.NO</th><th>ITEM</th><th>QTY</th><th>PRICE</th><th></th></tr></thead><tbody id="cartBody"><tr><td colspan="5" class="text-center text-muted py-3">No items - Add from left</td></tr></tbody></table>
-   <div style="background:#fef3c7; border:1.5px solid #facc15;border-radius:8px; padding:8px 10px; margin:10px 0; display:flex; justify-content:space-between; align-items:center;">
-  <div style="display:flex; align-items:center; gap:6px;">
-    <span style="background:#facc15; padding:4px 10px; border-radius:6px; font-weight:800; font-size:13px;">📦 Parcel</span>
-    <span id="parcelInfo" style="font-size:11px; color:#666;">0 clicks</span>
-  </div>
-  <div style="display:flex; gap:6px;">
-    <button onclick="addParcel(5)" style="background:#157347; color:white; border:none; border-radius:6px; font-weight:700; font-size:12px;">Rs. 5</button>
-    <button onclick="addParcel(10)" style="background:#157347; color:white; border:none; border-radius:6px; font-weight:700; font-size:12px;">Rs. 10</button>
-    <button onclick="clearParcel()" style="background: none;color: inherit;border: none;padding: 0;font: inherit;cursor: pointer;outline: inherit;appearance: none; -webkit-appearance: none;color:firebrick; font-weight:700;">✕</button>
-  </div>
-</div>
-<div id="parcelChargeText" style="display:none; text-align:right; font-size:12px; font-weight:600; color:#16a34a; margin-bottom:8px;">
-  Parcel Charge: Rs.<span id="parcelAmt">0</span> (<span id="parcelClicks">0</span> clicks)
-</div>
-<hr class="my-3">
-<div style="background:#fef3c7; border:1.5px solid #facc15;border-radius:8px; padding:8px 10px; margin:10px 0;">
-  <div class="d-flex justify-content-between fw-bold" style="align-items:center;"><span style="background:#facc15;padding:4px 10px; border-radius:6px; font-weight:800; font-size:15px;">💰 Grand Total</span>
-  <span id="gt"style="margin-right:5% !important;font-size:20px;">Rs. 0</span></div>
-  </div>
-          <button class="btn btn-success w-100 mt-3" onclick="return saveBill()"><i class="bi bi-save"></i> Save Bill</button>
-<div id="successMsg" style="display:none; background:#f0fdf4; border:2px solid #22c55e; color:#16a34a; padding:12px; border-radius:8px; font-weight:700; text-align:center; margin-top:12px;"></div> 
+          <div class="d-flex justify-content-between align-items-center mt-2 p-2 rounded" style="background:#fef9c3;border:1px solid #facc15;"><span>📦 Parcel <small id="parcelInfo">0 clicks</small></span><span><button class="btn btn-sm btn-success" onclick="addParcel(5)">Rs. 5</button> <button class="btn btn-sm btn-success" onclick="addParcel(10)">Rs. 10</button> <span class="fw-bold">Rs.<span id="parcelAmt">0</span></span> <span onclick="clearParcel()" style="cursor:pointer">❌</span></span></div><div class="d-flex justify-content-between fw-bold border-top pt-2 mt-2"><span>Grand Total</span><span id="gt">Rs. 0</span></div>
+          <button class="btn btn-success w-100 mt-3" onclick="showHome()">← Back to Home - Save & Print Pannunga</button>
+<div id="successMsg" style="display:none; background:#f0fdf4; border:2px solid #22c55e; color:#16a34a; padding:12px; border-radius:8px; font-weight:700; text-align:center; margin-top:12px;"></div>
+          
+       
         </div>
       </div>
     </div>
@@ -76,7 +86,7 @@
 
   <div id="savedPage" class="d-none">
     <div class="d-flex justify-content-between align-items-center mb-2">
-      <button class="btn btn-dark btn-sm" onclick="showPage('billing')"><i class="bi bi-arrow-left"></i> Back to Billing</button>
+      <button class="btn btn-dark btn-sm" onclick="showPage('billing')"><i class="bi bi-arrow-left"></i> Back to Menu</button>
       <div class="text-center"><h6 class="fw-bold m-0">Saved Bills <span id="cnt2" class="badge bg-secondary"></span></h6><small id="summary" class="text-muted"></small></div>
       <button class="btn btn-success btn-sm" onclick="downloadReport()"><i class="bi bi-download"></i> Download Report</button>
     </div>
@@ -86,22 +96,22 @@
   </div>
 </div>
 
-
 <!-- ===== Bill Details Modal - Same Design - Start ===== -->
 <div id="billModal" class="modal-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:9999; justify-content:center; align-items:center; padding:15px;">
   <div class="bill-card" style="background:white; width:100%; max-width:380px; border-radius:24px; padding:20px; box-shadow:0 10px 30px rgba(0,0,0,0.3); font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
     
     <!-- Header -->
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
-      <h2 style="margin:0; font-size:18px; font-weight:700; color:#1f2937;">Bill Details</h2>
+      <h2 style="margin:0; font-size:24px; font-weight:700; color:#1f2937;">Bill Details</h2>
+      <button onclick="closeBillModal()" style="background:#f3f4f6; border:none; width:32px; height:32px; border-radius:50%; font-size:18px; cursor:pointer;">✕</button>
     </div>
     
     <!-- Shop Name -->
-    <div style="display:flex; justify-content:flex-start; margin-bottom:15px;">
-      <span style="background:#f9fafb; padding:6px 12px; font-weight: 800; border-radius:8px; font-size:13px; color:#000000; display:flex; align-items:center; gap:6px;"><img src="images/logo4.jpg" alt="MS Logo" style="width:20px; height:20px;"> MS Emporium</span>
+    <div style="display:flex; justify-content:flex-end; margin-bottom:15px;">
+      <span style="background:#f9fafb; padding:6px 12px; border-radius:8px; font-size:13px; color:#6b7280; display:flex; align-items:center; gap:6px;">🏪 MS Emporium</span>
     </div>
     
-    <hr style="border:none; border-top:1px solid #000; margin:0 0 10px 0;">
+    <hr style="border:none; border-top:1px solid #e5e7eb; margin:0 0 15px 0;">
     
     <!-- Bill Info -->
     <div id="rec" style="font-family:inherit;">
@@ -118,12 +128,12 @@
         <span style="font-weight:600; font-size:14px;">T1</span>
       </div>
       
-      <hr style="border:none; border-top:1px solid #e5e7eb; margin:0 0 0 0;">
+      <hr style="border:none; border-top:1px solid #e5e7eb; margin:0 0 15px 0;">
       
       <!-- Items -->
-      <h3 style="margin:0 0 0 0; font-size:16px; font-weight:600;">Items</h3>
+      <h3 style="margin:0 0 12px 0; font-size:16px; font-weight:600;">Items</h3>
       
-      <div style=" margin-bottom:5px;">
+      <div style="display:flex; justify-content:space-between; margin-bottom:14px;">
         <span style="font-size:15px;">Muskmelon Juice</span>
         <span style="font-size:15px;">1 × ₹70</span>
       </div>
@@ -141,7 +151,7 @@
       </div>
       
       <hr style="border:none; border-top:1.5px solid #111; margin:0 0 15px 0;">
-
+      
       <!-- Total -->
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
         <span style="font-size:22px; font-weight:700;">Total</span>
@@ -166,11 +176,21 @@
 
 <!-- ===== Bill Details Modal - End ===== -->
 
+
+<!-- ===== PRINT PREVIEW POPUP - Print ku munnadi varanum ===== -->
+<div id="previewModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);z-index:10000;justify-content:center;align-items:center;padding:15px;">
+  <div style="background:#fff;width:100%;max-width:380px;border-radius:16px;padding:20px;">
+    <h5 class="fw-bold text-center">MS Emporium</h5><p class="text-center small text-muted">Juices &amp; Snacks - Print Preview</p><hr>
+    <div id="previewBody"></div>
+    <div class="d-flex gap-2 mt-3"><button class="btn btn-dark flex-fill" onclick="closePreview()">Cancel</button><button class="btn btn-success flex-fill" onclick="confirmPrint()">🖨️ Print</button></div><button class="btn btn-primary w-100 mt-2" onclick="savePreviewAsPDF()">📄 Save as PDF - iPad</button><small class="text-muted d-block text-center mt-1">iPad la idha click pannu - PDF download aagum, apram MPrinter la open pannu</small>
+  </div>
+</div>
 <div class="footer">
   <div><small>Copyrights @MS Emporium</small></div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/script.js?v=7"></script>
+<script src="js/script.js?v=36"></script>
 <script>
 if('serviceWorker' in navigator){
   navigator.serviceWorker.register('sw.js');
@@ -178,3 +198,4 @@ if('serviceWorker' in navigator){
 </script>
 </body>
 </html>
+
