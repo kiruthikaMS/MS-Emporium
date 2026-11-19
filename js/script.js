@@ -1,8 +1,8 @@
 let products = [
-  {id:1, name:'Watermelon Juice', cat:'Juices', price:40, img:'juices/watermelon.jpg'},
+  {id:1, name:'Watermelon Juice', cat:'Juices', price:35, img:'juices/watermelon.jpg'},
   {id:2, name:'Muskmelon Juice', cat:'Juices', price:40, img:'juices/musk_melon.jpg'},
   {id:3, name:'Orange Juice', cat:'Juices', price:50, img:'juices/orange.jpg'},
-  {id:4, name:'Sathukudi Juice', cat:'Juices', price:45, img:'juices/sathukudi.jpg'},
+  {id:4, name:'Mosambi Juice', cat:'Juices', price:45, img:'juices/sathukudi.jpg'},
   {id:5, name:'Mango Juice', cat:'Juices', price:50, img:'juices/mango.jpg'},
   {id:6, name:'Pomegranate Juice', cat:'Juices', price:55, img:'juices/pome.jpg'},
   {id:7, name:'Pineapple Juice', cat:'Juices', price:35, img:'juices/pineapple.jpg'},
@@ -36,29 +36,29 @@ let products = [
   {id:33, name:'chocolate Falooda', cat:'Falooda', price:95, img:'falooda/chocolate_falooda.jpg'}, 
 
   // Milkshakes
-  {id:34, name:'Butterscotch Milkshake', cat:'Milkshakes', price:60, img:'milkshakes/Butterscotch Milk Shake.jpg'},
-  {id:35, name:'Cherry Milkshake', cat:'Milkshakes', price:55, img:'milkshakes/Cherry Milkshake.jpg'},
-  {id:36, name:'Muskmelon Milk Shake', cat:'Milkshakes', price:55, img:'milkshakes/Muskmelon Milk Shake.jpg'},
-  {id:37, name:'Strawberry Milk Shake', cat:'Milkshakes', price:65, img:'milkshakes/Strawberry Milkshake.jpg'},
-  {id:38, name:'Dates Milk Shake', cat:'Milkshakes', price:60, img:'milkshakes/Dates Milk Shake.jpg'},
-  {id:39, name:'Apple Milk Shake', cat:'Milkshakes', price:60, img:'milkshakes/Apple Milk Shake.jpg'},
-  {id:40, name:'Mango Milk Shake', cat:'Milkshakes', price:60, img:'milkshakes/Mango Milk Shake.jpg'},
-  {id:41, name:'Banana Milk Shake', cat:'Milkshakes', price:55, img:'milkshakes/Banana Milk Shake.jpg'},
-  {id:42, name:'Water Melon Shake', cat:'Milkshakes', price:50, img:'milkshakes/Watermelon Milk Shake.jpg'},
-  {id:43, name:'Pomegranate Milk Shake', cat:'Milkshakes', price:65, img:'milkshakes/Pomegranate Shake.jpg'},
-  {id:44, name:'Fig Milk Shake', cat:'Milkshakes', price:60, img:'milkshakes/Fig Milk Shake.jpg'},
-  {id:45, name:'Vanilla Milk Shake', cat:'Milkshakes', price:60, img:'milkshakes/Vanilla Milk Shake.jpg'},
-  {id:46, name:'Chocolate Milk Shake', cat:'Milkshakes', price:60, img:'milkshakes/Chocolate Milk Shake.jpg'},
-  {id:47, name:'Badam Milk Shake', cat:'Milkshakes', price:60, img:'milkshakes/Badam Milk Shake.jpg'},
-  {id:48, name:'Pista Milk Shake', cat:'Milkshakes', price:70, img:'milkshakes/Pista Milk Shake.jpg'},
-  {id:49, name:'Oreo Milk Shake', cat:'Milkshakes', price:65, img:'milkshakes/Oreo Milk Shake.jpg'},
-  {id:50, name:'Kitkat Milk Shake', cat:'Milkshakes', price:65, img:'milkshakes/Kitkat Milk Shake.jpg'},
-  {id:51, name:'Gems Milk Shake', cat:'Milkshakes', price:60, img:'milkshakes/Gems Milk Shake.jpg'},
-  {id:52, name:'Jackfruit Milk Shake', cat:'Milkshakes', price:70, img:'milkshakes/Jackfruit Milk Shake.jpg'},
-  {id:53, name:'Guava Milk Shake', cat:'Milkshakes', price:50, img:'milkshakes/Guava Milk Shake.jpg'},
-  {id:54, name:'Lychi Milk Shake', cat:'Milkshakes', price:65, img:'milkshakes/Lychi Milk Shake.jpg'},
-  {id:55, name:'Green Apple Milk Shake', cat:'Milkshakes', price:60, img:'milkshakes/Green Apple Milk Shake.jpg'},
-  {id:56, name:'Brownie Milkshake', cat:'Milkshakes', price:65, img:'milkshakes/Brownie Milkshake.jpg'},
+  {id:34, name:'Butterscotch Milkshake', cat:'Milkshakes', price:90, img:'milkshakes/Butterscotch Milk Shake.jpg'},
+  {id:35, name:'Cherry Milkshake', cat:'Milkshakes', price:90, img:'milkshakes/Cherry Milkshake.jpg'},
+  {id:36, name:'Muskmelon Milk Shake', cat:'Milkshakes', price:90, img:'milkshakes/Muskmelon Milk Shake.jpg'},
+  {id:37, name:'Strawberry Milk Shake', cat:'Milkshakes', price:90, img:'milkshakes/Strawberry Milkshake.jpg'},
+  {id:38, name:'Dates Milk Shake', cat:'Milkshakes', price:90, img:'milkshakes/Dates Milk Shake.jpg'},
+  {id:39, name:'Apple Milk Shake', cat:'Milkshakes', price:90, img:'milkshakes/Apple Milk Shake.jpg'},
+  {id:40, name:'Mango Milk Shake', cat:'Milkshakes', price:90, img:'milkshakes/Mango Milk Shake.jpg'},
+  {id:41, name:'Banana Milk Shake', cat:'Milkshakes', price:90, img:'milkshakes/Banana Milk Shake.jpg'},
+  {id:42, name:'Water Melon Shake', cat:'Milkshakes', price:90, img:'milkshakes/Watermelon Milk Shake.jpg'},
+  {id:43, name:'Pomegranate Milk Shake', cat:'Milkshakes', price:90, img:'milkshakes/Pomegranate Shake.jpg'},
+  {id:44, name:'Fig Milk Shake', cat:'Milkshakes', price:90, img:'milkshakes/Fig Milk Shake.jpg'},
+  {id:45, name:'Vanilla Milk Shake', cat:'Milkshakes', price:90, img:'milkshakes/Vanilla Milk Shake.jpg'},
+  {id:46, name:'Chocolate Milk Shake', cat:'Milkshakes', price:90, img:'milkshakes/Chocolate Milk Shake.jpg'},
+  {id:47, name:'Badam Milk Shake', cat:'Milkshakes', price:90, img:'milkshakes/Badam Milk Shake.jpg'},
+  {id:48, name:'Pista Milk Shake', cat:'Milkshakes', price:90, img:'milkshakes/Pista Milk Shake.jpg'},
+  {id:49, name:'Oreo Milk Shake', cat:'Milkshakes', price:90, img:'milkshakes/Oreo Milk Shake.jpg'},
+  {id:50, name:'Kitkat Milk Shake', cat:'Milkshakes', price:90, img:'milkshakes/Kitkat Milk Shake.jpg'},
+  {id:51, name:'Gems Milk Shake', cat:'Milkshakes', price:90, img:'milkshakes/Gems Milk Shake.jpg'},
+  {id:52, name:'Jackfruit Milk Shake', cat:'Milkshakes', price:90, img:'milkshakes/Jackfruit Milk Shake.jpg'},
+  {id:53, name:'Guava Milk Shake', cat:'Milkshakes', price:90, img:'milkshakes/Guava Milk Shake.jpg'},
+  {id:54, name:'Lychi Milk Shake', cat:'Milkshakes', price:90, img:'milkshakes/Lychi Milk Shake.jpg'},
+  {id:55, name:'Green Apple Milk Shake', cat:'Milkshakes', price:90, img:'milkshakes/Green Apple Milk Shake.jpg'},
+  {id:56, name:'Brownie Milkshake', cat:'Milkshakes', price:90, img:'milkshakes/Brownie Milkshake.jpg'},
 
   // Lassi
   {id:57, name:'Lassi', cat:'Lassi', price:35, img:'lassi/Lassi.jpg'},
@@ -78,12 +78,12 @@ let products = [
   {id:71, name:'Carrot Lassi', cat:'Lassi', price:50, img:'lassi/Carrot Lassi.jpg'},
 
   // Beverages
-  {id:72, name:'Tea', cat:'Beverages', price:15, img:'beverages/tea.jpg'},
-  {id:73, name:'Coffee', cat:'Beverages', price:20, img:'beverages/coffee.jpg'},
-  {id:74, name:'Filter Coffee', cat:'Beverages', price:30, img:'beverages/filter coffee.jpg'},
-  {id:75, name:'Ginger Tea', cat:'Beverages', price:20, img:'beverages/ginger tea.jpg'},
-  {id:76, name:'Lemon Tea', cat:'Beverages', price:20, img:'beverages/lemon tea.jpg'},
-  {id:77, name:'Lemon Tea with Honey', cat:'Beverages', price:25, img:'beverages/lemon tea with honey.jpg'},
+  {id:72, name:'Tea', cat:'Beverages', price:20, img:'beverages/tea.jpg'},
+  {id:73, name:'Coffee', cat:'Beverages', price:30, img:'beverages/coffee.jpg'},
+  {id:74, name:'Filter Coffee', cat:'Beverages', price:40, img:'beverages/filter coffee.jpg'},
+  {id:75, name:'Ginger Tea', cat:'Beverages', price:25, img:'beverages/ginger tea.jpg'},
+  {id:76, name:'Lemon Tea', cat:'Beverages', price:25, img:'beverages/lemon tea.jpg'},
+  {id:77, name:'Lemon Tea with Honey', cat:'Beverages', price:35, img:'beverages/lemon tea with honey.jpg'},
   {id:78, name:'Pineapple Tea', cat:'Beverages', price:30, img:'beverages/pineapple tea.jpg'},
   {id:79, name:'Boost', cat:'Beverages', price:40, img:'beverages/boost.jpg'},
   {id:80, name:'Horlicks', cat:'Beverages', price:40, img:'beverages/horlicks.jpg'},
@@ -150,7 +150,7 @@ let products = [
   {id:129, name:'Veg Sandwich', cat:'Sandwich & Toast', price:60, img:'sandwich_toast/Veg Sandwich.jpg'},
   {id:130, name:'Veg Cheese Sandwich', cat:'Sandwich & Toast', price:85, img:'sandwich_toast/Veg Cheese Sandwich.jpg'},
   {id:131, name:'Corn Sandwich', cat:'Sandwich & Toast', price:60, img:'sandwich_toast/Corn Sandwich.jpg'},
-  {id:132, name:'Corn Cheese Sandwich', cat:'Sandwich & Toast', price:90, img:'sandwich_toast/Corn Cheese Sandwich.jpg'},
+  {id:132, name:'Corn Cheese Sandwich', cat:'Sandwich & Toast', price:80, img:'sandwich_toast/Corn Cheese Sandwich.jpg'},
   {id:133, name:'Bread Butter Jam', cat:'Sandwich & Toast', price:40, img:'sandwich_toast/Bread Butter Jam.jpg'},
   {id:134, name:'Paneer Sandwich', cat:'Sandwich & Toast', price:75, img:'sandwich_toast/Paneer Sandwich.jpg'},
   {id:135, name:'Chilly Cheese Toast', cat:'Sandwich & Toast', price:80, img:'sandwich_toast/Chilly Cheese Toast.jpg'},
@@ -174,64 +174,23 @@ let products = [
 
 ];
 
-let cart=[], bills=JSON.parse(localStorage.getItem('ms_bills')||'[]'), curPage=1, perPage=8, curCat='All', sText='', editingId=null;
-let currentViewBillId = null; // Ipa current view bill id store pannrom
-let parcelCharge = 0; // PARCEL - NEW
-let parcelClicks = 0; // COUNT
+let bills=JSON.parse(localStorage.getItem('ms_bills')||'[]'), curPage=1, perPage=8, curCat='All', sText='', editingId=null;
+let currentTable=null; // 'T1'..'T5' - Paper Point 1
+let tableOrders={T1:[],T2:[],T3:[],T4:[],T5:[]}; // Per-table bill store - Point 5
+let parcelOrders={T1:0,T2:0,T3:0,T4:0,T5:0}, parcelClicks={T1:0,T2:0,T3:0,T4:0,T5:0};
+let pendingPrintBill=null;
+let cart=[]; // alias - always points to currentTable cart
+function syncCart(){ if(currentTable) cart=tableOrders[currentTable]; else cart=[]; }
+function tableLabel(t){ if(!t) return '-'; return 'T' + t.replace('T',''); } // T1 -> T1, T10 -> T10
 
-function addParcel(amt){
-  parcelCharge += amt; // ETHANA CLICK PANALUM ADD AAGUM
-  parcelClicks++;
-  document.getElementById('parcelAmt').textContent = parcelCharge;
-  document.getElementById('parcelClicks').textContent = parcelClicks;
-  document.getElementById('parcelInfo').textContent = parcelClicks + ' clicks';
-  document.getElementById('parcelChargeText').style.display = 'block';
-  renderCart();
-}
-function clearParcel(){
-  parcelCharge = 0;
-  parcelClicks = 0;
-  document.getElementById('parcelAmt').textContent = '0';
-  document.getElementById('parcelClicks').textContent = '0';
-  document.getElementById('parcelInfo').textContent = '0 clicks';
-  document.getElementById('parcelChargeText').style.display = 'none';
-  renderCart();
-}
 
-function updateDateTime(){
-  let dtEl = document.getElementById('dt');
-  if(dtEl){
-    dtEl.textContent = new Date().toLocaleString('en-IN', {timeZone: 'Asia/Kolkata'});
-  }
-}
-setInterval(updateDateTime, 1000);
-updateDateTime(); // First time call
-function updateBillNo(){ 
-  // BILL001 correct logic - max bill no +1
-  let nextNum = 1;
-  if(bills.length>0){
-    let maxNum = 0;
-    bills.forEach(b=>{
-      let m = b.billNo.match(/BILL(\d+)/);
-      if(m){
-        let n = parseInt(m[1]);
-        if(n>maxNum) maxNum=n;
-      }
-    });
-    nextNum = maxNum + 1;
-  }
-  document.getElementById('bno').textContent='BILL'+String(nextNum).padStart(3,'0');
-  let billDateEl = document.getElementById('billDate');
-  if(billDateEl){
-    // IST date
-    let now = new Date(new Date().toLocaleString('en-US', {timeZone: 'Asia/Kolkata'}));
-    let yyyy = now.getFullYear();
-    let mm = String(now.getMonth()+1).padStart(2,'0');
-    let dd = String(now.getDate()).padStart(2,'0');
-    if(!billDateEl.value) billDateEl.value = yyyy+'-'+mm+'-'+dd;
-  }
-}
+setInterval(()=>{ document.getElementById('dt').textContent=new Date().toLocaleString('en-IN'); },1000);
+function updateBillNo(){ let n='BILL'+String(bills.length+1).padStart(3,'0'); let a=document.getElementById('bno'); if(a)a.textContent=n; let h=document.getElementById('bnoHome'); if(h)h.textContent=n; }
+function renderHomeTables(){ let el=document.getElementById('tablesHome'); if(!el) return; el.innerHTML=['T1','T2','T3','T4','T5'].map(t=>{ let items=tableOrders[t]; let cnt=items.reduce((s,x)=>s+x.qty,0); let tot=items.reduce((s,x)=>s+x.qty*x.price,0)+(parcelOrders[t]||0); let active=currentTable===t?'border-success':''; return `<div class="col-6 col-md-4"><div class="product-box ${active}" style="height:130px;cursor:pointer;${currentTable===t?'border:2px solid #16a34a;background:#f0fdf4':''}" onclick="selectTable('${t}')"><div style="font-size:22px;font-weight:800">Table ${t.replace('T','')}</div><div class="small text-muted">${cnt?cnt+' items - Rs.'+tot:'Empty - Click to open Menu'}</div><div><span class="badge ${cnt?'bg-success':'bg-secondary'}">${cnt?'Occupied':'Free'}</span></div></div></div>`; }).join(''); }
+function selectTable(t){ currentTable=t; syncCart(); let tno=document.getElementById('tno'); if(tno)tno.value=tableLabel(t); let th=document.getElementById('tnoHome'); if(th)th.value=tableLabel(t); let b=document.getElementById('menuTableBadge'); if(b)b.textContent='Table: Table'+t.replace('T','')+' - '+tableLabel(t); renderHomeTables(); renderCart(); showPage('billing'); }
+function showHome(){ document.getElementById('homePage').classList.remove('d-none'); document.getElementById('billingPage').classList.add('d-none'); document.getElementById('savedPage').classList.add('d-none'); renderHomeTables(); renderCart(); }
 
+updateBillNo();
 
 let categories=['All','Juices','Falooda','Milkshakes','Lassi','Beverages','Mojitos','Chaat Items','Maggi','Fried Items','Ice Cream','Fruit Salad','Sandwich & Toast'];
 function renderCats(){ document.getElementById('cats').innerHTML=categories.map(c=>`<button class="cat-btn ${curCat==c?'active':''}" onclick="selCat('${c}')">${c}</button>`).join(''); }
@@ -256,58 +215,36 @@ function renderGrid(){
 function goP(p){ if(p<1) return; curPage=p; renderGrid(); }
 
 function addCart(id){
+  if(!currentTable){ alert('First Table select pannunga! Home la Table click pannunga'); showHome(); return; }
   let prod=products.find(x=>x.id==id); if(!prod) return;
   let ex=cart.find(c=>c.id==id); if(ex) ex.qty++; else cart.push({id:prod.id, name:prod.name, price:parseFloat(prod.price), qty:1});
   renderCart();
 }
 function renderCart(){
-  let body=document.getElementById('cartBody');
-  if(!body) return;
-  let subTotal = cart.reduce((s,c)=>s+c.price*c.qty,0);
-  let grandTotal = subTotal + parcelCharge;
-    // CART EMPTY + PARCEL 0 NA - No items kaatum, parcel hide
-  if(cart.length==0){
-    if(parcelCharge==0){
-      body.innerHTML='<tr><td colspan="5" class="text-center text-muted py-3">No items - Add from left</td></tr>';
-      // Parcel DOM full hide
-      let pct = document.getElementById('parcelChargeText');
-      if(pct) pct.style.display='none';
-      let pi = document.getElementById('parcelInfo');
-      if(pi) pi.textContent='0 clicks';
-    } else {
-      // Cart empty but parcel mattum irukku - parcel mattum kaatum
-      body.innerHTML=`<tr><td colspan="2">📦 Parcel (${parcelClicks} clicks)</td><td></td><td>Rs.${parcelCharge}</td><td><span style="color:red;cursor:pointer" onclick="clearParcel()">✕</span></td></tr>`;
-    }
-  } else {
-    body.innerHTML=cart.map((c,i)=>`<tr><td>${i+1}</td><td>${c.name}</td><td><button class="btn btn-sm border py-0 px-1" onclick="chg(${i},-1)">-</button> ${c.qty} <button class="btn btn-sm border py-0 px-1" onclick="chg(${i},1)">+</button></td><td>Rs.${c.price*c.qty}</td><td><span class="text-danger" style="cursor:pointer" onclick="rem(${i})">✕</span></td></tr>`).join('');
-    if(parcelCharge>0){
-      body.innerHTML+=`<tr style="background:#fef3c7;"><td></td><td>📦 Parcel (${parcelClicks} clicks)</td><td></td><td>Rs.${parcelCharge}</td><td><span style="color:red;cursor:pointer" onclick="clearParcel()">✕</span></td></tr>`;
-    }
-  }
-  document.getElementById('gt').textContent='Rs. '+grandTotal;
-  // Grand Total 0 na parcel text hide
-  if(grandTotal==0){
-    let pct = document.getElementById('parcelChargeText');
-    if(pct) pct.style.display='none';
-  }
+  syncCart();
+  let tot=cart.reduce((s,c)=>s+c.price*c.qty,0);
+  let parcel=currentTable?parcelOrders[currentTable]:0; let clicks=currentTable?parcelClicks[currentTable]:0;
+  let rows = cart.length==0 ? '<tr><td colspan="5" class="text-center text-muted py-3">No items - Add from left</td></tr>' : cart.map((c,i)=>{ return `<tr><td>${i+1}</td><td>${c.name}</td><td><button class="btn btn-sm border py-0 px-1" onclick="chg(${i},-1)">-</button> ${c.qty} <button class="btn btn-sm border py-0 px-1" onclick="chg(${i},1)">+</button></td><td>Rs.${c.price*c.qty}</td><td><span class="text-danger" style="cursor:pointer" onclick="rem(${i})"><i class="bi bi-x-circle"></i></span></td></tr>`; }).join('');
+  if(parcel>0) rows += `<tr><td></td><td>Parcel Charges</td><td></td><td>Rs.${parcel}</td><td></td></tr>`;
+  ['cartBody','cartBodyHome'].forEach(id=>{ let b=document.getElementById(id); if(b) b.innerHTML=rows; });
+  ['gt','gtHome'].forEach(id=>{ let e=document.getElementById(id); if(e) e.textContent='Rs. '+(tot+parcel); });
+  ['parcelAmt','parcelAmtHome'].forEach(id=>{ let e=document.getElementById(id); if(e) e.textContent=parcel; });
+  ['parcelInfo','parcelInfoHome'].forEach(id=>{ let e=document.getElementById(id); if(e) e.textContent=clicks+' clicks'; });
+  renderHomeTables();
 }
-
-
 function chg(i,d){ cart[i].qty+=d; if(cart[i].qty<=0) cart.splice(i,1); renderCart(); }
 function rem(i){ cart.splice(i,1); renderCart(); }
 
 function saveBill(){
-  if(cart.length==0 && parcelCharge==0){ alert('Add items first - Cart empty!'); return false; }
+  if(cart.length==0){ alert('Add items first - Cart empty!'); return false; }
   let tnoEl=document.getElementById('tno'); let tno=tnoEl?tnoEl.value:''; 
   if(!tno || tno.trim()==''){ alert('Enter Table Number!'); if(tnoEl) tnoEl.focus(); return false; }
   let billDateEl=document.getElementById('billDate'); let billDateInput=billDateEl?billDateEl.value:'';
   if(billDateEl && !billDateInput){ alert('Select Bill Date 📅'); return false; }
   
-  // PARCEL ADD - IDHA INGA PODANUM
-  let itemsTotal = cart.reduce((s,c)=>s+c.price*c.qty,0);
-  let total = itemsTotal + parcelCharge; // PARCEL ADD AAGI TOTAL VARUM
-  
-  let formattedDate=billDateInput?new Date(billDateInput+'T12:00:00').toLocaleDateString('en-IN'):new Date().toLocaleDateString('en-IN');
+  let parcel=currentTable?parcelOrders[currentTable]:0;
+  let total=cart.reduce((s,c)=>s+c.price*c.qty,0)+parcel;
+  let formattedDate=billDateInput?new Date(billDateInput).toLocaleDateString('en-IN'):new Date().toLocaleDateString('en-IN');
   
   // EDIT MODE CHECK - Same Bill No varanum!
   if(editingId){
@@ -318,9 +255,7 @@ function saveBill(){
       bills[idx].billDate=billDateInput||bills[idx].billDate;
       bills[idx].formattedDate=formattedDate;
       bills[idx].items=[...cart];
-      bills[idx].parcelCharge=parcelCharge; // PARCEL SAVE
-      bills[idx].parcelClicks=parcelClicks; // CLICKS SAVE
-      bills[idx].total=total; // TOTAL WITH PARCEL
+      bills[idx].total=total;
       bills[idx].count=cart.length;
       bills[idx].date=new Date().toLocaleString('en-IN');
       
@@ -328,16 +263,17 @@ function saveBill(){
       
       let sm=document.getElementById('successMsg');
       if(sm){
-        sm.innerHTML='✅ '+bills[idx].billNo+' Updated Successfully! Table: '+tno+' - Rs.'+total+' (Parcel Rs.'+parcelCharge+')';
+        sm.innerHTML='✅ '+bills[idx].billNo+' Updated Successfully! Table: '+tno+' - Rs.'+total;
         sm.style.display='block';
         sm.classList.add('show');
         setTimeout(()=>{ sm.style.display='none'; sm.classList.remove('show'); }, 5000);
       }
+      
       setTimeout(()=>{
-        cart=[]; parcelCharge=0; parcelClicks=0; editingId=null;
+        if(currentTable){ tableOrders[currentTable]=[]; parcelOrders[currentTable]=0; parcelClicks[currentTable]=0; syncCart(); }
+        editingId=null;
         if(tnoEl) tnoEl.value='';
         let editBox=document.getElementById('editBox'); if(editBox) editBox.classList.add('d-none');
-        if(typeof clearParcel === 'function') clearParcel();
         renderCart(); updateBillNo(); renderSaved();
       }, 600);
       
@@ -345,63 +281,28 @@ function saveBill(){
     }
   }
   
-  // NEW BILL - IDHULA PARCEL ADD
-  let bnoEl=document.getElementById('bno') || document.getElementById('billNoDisplay') || document.getElementById('billNo');
-let bno='';
-if(bnoEl){
-  bno=bnoEl.textContent||bnoEl.value;
-}
-// Empty or timestamp maadiri perusa irundha correct BILL001 generate
-if(!bno || bno.length>10 || bno.includes('1793')){
-  let maxNum = 0;
-  bills.forEach(b=>{
-    let m = b.billNo.match(/BILL(\d+)/);
-    if(m){
-      let n = parseInt(m[1]);
-      if(n>maxNum) maxNum=n;
-    }
-  });
-  bno='BILL'+String(maxNum+1).padStart(3,'0');
-  if(bills.length==0) bno='BILL001';
-}
-
-
-  
-  // BILL OBJECT LA PARCEL ADD - IDHU MUKKIYAM
-  let bill={
-    id:Date.now(), 
-    billNo:bno, 
-    billDate:billDateInput, 
-    formattedDate:formattedDate, 
-    date:new Date().toLocaleString('en-IN'), 
-    tableNo:tno, 
-    items:[...cart], 
-    parcelCharge:parcelCharge, 
-    parcelClicks:parcelClicks, 
-    total:total, 
-    count:cart.length
-  };
-  
+  // NEW BILL MODE - Pudhu bill create pannu
+  let bnoEl=document.getElementById('bno'); let bno=bnoEl?bnoEl.textContent:'BILL'+String(bills.length+1).padStart(3,'0');
+  let bill={id:Date.now(), billNo:bno, billDate:billDateInput, formattedDate:formattedDate, date:new Date().toLocaleString('en-IN'), tableNo:tno, items:[...cart], parcelCharge:parcel, total, count:cart.length};
   bills.push(bill);
   localStorage.setItem('ms_bills', JSON.stringify(bills));
   
   let sm=document.getElementById('successMsg');
   if(sm){
-    sm.innerHTML='✅ '+bno+' Saved! Total Rs.'+total+' (Items Rs.'+itemsTotal+' + Parcel Rs.'+parcelCharge+')';
+    sm.innerHTML='✅ '+bno+' Saved Successfully! Table: '+tno+' - Rs.'+total;
     sm.style.display='block';
     sm.classList.add('show');
-    setTimeout(()=>{ sm.style.display='none'; sm.classList.remove('show'); }, 4000);
+    setTimeout(()=>{ sm.style.display='none'; sm.classList.remove('show'); }, 5000);
   }
   
   setTimeout(()=>{
-    cart=[]; parcelCharge=0; parcelClicks=0;
+    if(currentTable){ tableOrders[currentTable]=[]; parcelOrders[currentTable]=0; parcelClicks[currentTable]=0; syncCart(); }
     if(tnoEl) tnoEl.value='';
-    if(typeof clearParcel === 'function') clearParcel();
     renderCart(); updateBillNo(); renderSaved();
   }, 600);
-}
   
-
+  return false;
+}
 
 function renderSaved(){
   document.getElementById('cnt').textContent=bills.length;
@@ -409,43 +310,12 @@ function renderSaved(){
   let body=document.getElementById('savedBody');
   if(bills.length==0){ body.innerHTML='<tr><td colspan="6" class="text-center text-muted py-3">No bills yet</td></tr>'; return; }
   // FIXED: use count, not undefined, handle both count and itemsCount
-  body.innerHTML=bills.map(b=>{ let itemCount = b.count || b.itemsCount || b.items?.length || 0; return `<tr><td>${b.billNo}</td><td>${b.formattedDate || b.date}</td><td>${b.tableNo}</td><td>${itemCount} items</td><td>Rs.${b.total}</td><td><button class="btn btn-sm btn-outline-dark me-1" onclick="viewB(${b.id})">View</button><button class="btn btn-sm btn-outline-success me-1" onclick="editB(${b.id})">Edit</button><button class="btn btn-sm btn-outline-danger" onclick="delB(${b.id})">Delete</button></td></tr>`; }).join('');
+  body.innerHTML=bills.map(b=>{ let itemCount = b.count || b.itemsCount || b.items?.length || 0; return `<tr><td>${b.billNo}</td><td>${b.date}</td><td>${b.tableNo}</td><td>${itemCount} items</td><td>Rs.${b.total}</td><td><button class="btn btn-sm btn-outline-dark me-1" onclick="viewB(${b.id})">View</button><button class="btn btn-sm btn-outline-success me-1" onclick="editB(${b.id})">Edit</button><button class="btn btn-sm btn-outline-danger" onclick="delB(${b.id})">Delete</button></td></tr>`; }).join('');
 }
 function viewB(id){
-  try{
-    console.log('View clicked:', id);
-    let b = bills.find(x=>x.id==id);
-    if(!b){ alert('Bill not found!'); return; }
-    currentViewBillId = id;
-    let recEl = document.getElementById('rec');
-    if(!recEl){ alert('rec div missing'); return; }
-    recEl.innerHTML=`
-      <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
-        <span style="color:#6b7280; font-size:14px;">Bill No</span>
-        <span style="font-weight:600; font-size:14px;">${b.billNo}</span>
-      </div>
-      <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
-        <span style="color:#6b7280; font-size:14px;">Date</span>
-        <span style="font-weight:500; font-size:14px;">${b.formattedDate || b.date}</span>
-      </div>
-      <div style="display:flex; justify-content:space-between; margin-bottom:15px;">
-        <span style="color:#6b7280; font-size:14px;">Table</span>
-        <span style="font-weight:600; font-size:14px;">${b.tableNo}</span>
-      </div>
-      <hr style="border:none; border-top:1px solid #e5e7eb; margin:0 0 15px 0;">
-      <h3 style="margin:0 0 12px 0; font-size:16px; font-weight:600;">Items</h3>
-      ${b.items.map(i=>`<div style="display:flex; justify-content:space-between; margin-bottom:14px;"><span style="font-size:15px;">${i.name}</span><span style="font-size:15px;">${i.qty} × ₹${i.price}</span></div>`).join('')}
-      <hr style="border:none; border-top:1.5px solid #111; margin:0 0 15px 0;">
-      <div style="display:flex; justify-content:space-between;">
-        <span style="font-size:22px; font-weight:700;">Total</span>
-        <span style="font-size:28px; font-weight:800;">₹${b.total}</span>
-      </div>
-    `;
-    openBillModal();
-  }catch(err){
-    console.error('viewB error:', err);
-    alert('View error: '+err.message);
-  }
+  let b=bills.find(x=>x.id==id);
+  document.getElementById('rec').innerHTML=`<div class="text-center fw-bold">MS Emporium</div><div class="text-center small">Juices & Snacks</div><hr><div class="d-flex justify-content-between"><span>Bill No:</span><span>${b.billNo}</span></div><div class="d-flex justify-content-between"><span>Date:</span><span>${b.date}</span></div><div class="d-flex justify-content-between"><span>Table No:</span><span>${b.tableNo}</span></div><hr>${b.items.map(i=>`<div class="d-flex justify-content-between"><span>${i.name}</span><span>${i.qty} Rs.${i.price*i.qty}</span></div>`).join('')}<hr><div class="d-flex justify-content-between fw-bold"><span>Total (${b.count||b.itemsCount||0} items)</span><span>Rs.${b.total}</span></div><div class="text-center mt-3 small">Thank you! Visit again<br>MS Emporium</div>`;
+  new bootstrap.Modal(document.getElementById('recModal')).show();
 }
 function editB(id){
   let b=bills.find(x=>x.id==id); if(!b) return;
@@ -459,263 +329,203 @@ function editB(id){
   renderCart(); showPage('billing');
 }
 function delB(id){ if(confirm('Delete this bill?')){ bills=bills.filter(b=>b.id!=id); localStorage.setItem('ms_bills',JSON.stringify(bills)); updateBillNo(); renderSaved(); } }
-function showPage(p){ document.getElementById('billingPage').classList.toggle('d-none', p!='billing'); document.getElementById('savedPage').classList.toggle('d-none', p!='saved'); if(p=='saved') renderSaved(); }
+function showPage(p){ document.getElementById('homePage').classList.toggle('d-none', true); document.getElementById('billingPage').classList.toggle('d-none', p!='billing'); document.getElementById('savedPage').classList.toggle('d-none', p!='saved'); if(p=='saved') renderSaved(); if(p=='billing' && !currentTable){ /* Menu ku Table thevai - Home ku anuppu */ } }
 function downloadReport(){
   if(bills.length==0){ alert('No bills'); return; }
   let txt=''; bills.forEach(b=>{ let c=b.count||b.itemsCount||b.items?.length||0; txt+=`==================================\nMS Emporium\nJUICES & SHAKES - FRESH & COLD\n----------------------------------\nBill No: ${b.billNo}\nDate: ${b.date}\nTable No: ${b.tableNo}\n----------------------------------\nITEM              QTY   AMT\n----------------------------------\n`; b.items.forEach(i=>{ txt+=`${i.name.padEnd(18)} ${String(i.qty).padEnd(4)} Rs.${i.price*i.qty}\n`; }); txt+=`----------------------------------\nTotal (${c} items)        Rs.${b.total}\n----------------------------------\nThank you! Visit again\nMS Emporium\n==================================\n\n`; });
   let blob=new Blob([txt],{type:'text/plain'}); let a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='MS_Emporium_Bills_'+new Date().toLocaleDateString().replace(/\//g,'-')+'.txt'; a.click();
 }
-renderCats(); renderGrid(); renderSaved();
+renderCats(); renderGrid(); renderSaved(); renderHomeTables(); showHome(); let _bd=document.getElementById('billDate'); if(_bd && !_bd.value) _bd.value=new Date().toISOString().split('T')[0]; let _bdh=document.getElementById('billDateHome'); if(_bdh && !_bdh.value) _bdh.value=new Date().toISOString().split('T')[0]; setInterval(()=>{ let d=document.getElementById('dt'); if(d) d.textContent=new Date().toLocaleString('en-IN'); let dh=document.getElementById('dtHome'); if(dh) dh.textContent=new Date().toLocaleString('en-IN'); },1000);
 
 
-// Azhagaana Bill - GST illa, HR lines design - un code ku
-function formatFor58mm(){
-  let billsData = JSON.parse(localStorage.getItem('ms_bills')||'[]');
-  let b = billsData[billsData.length-1];
-  if(!b) b = {billNo:'BILL003', formattedDate:'03/11/2026', tableNo:'', items:[{name:'Strawberry Falooda Extra Large With Extra Icecream And Nuts', qty:1, price:385}], total:385};
-  function wrapText(text, maxLen){
-    let lines = [];
-    while(text.length > maxLen){
-      let cut = text.lastIndexOf(' ', maxLen);
-      if(cut === -1) cut = maxLen;
-      lines.push(text.substring(0, cut));
-      text = text.substring(cut).trim();
-    }
-    lines.push(text);
-    return lines;
-  }
-  let txt = "";
-  txt += "  * * * * * * * * * * * * * *\n";
-  txt += "\n";
-  txt += "      MS EMPORIUM\n";
-  txt += "   Juices & Snacks\n";
-  txt += "   ------------------------\n";
-  txt += `Bill  : ${b.billNo}\n`;
-  txt += `Date  : ${b.formattedDate || b.date}\n`;
-  txt += "   ------------------------\n";
-  txt += "ITEM              QTY AMOUNT\n";
-  txt += "--------------------------------\n";
-  b.items.forEach(i=>{
-    let nameLines = wrapText(i.name, 32);
-    nameLines.forEach(l=> txt += l + "\n");
-    txt += `Qty ${i.qty} x Rs ${i.price}.00      ${i.price*i.qty}.00\n`;
-    txt += "   ------------------------\n";
-  });
-  txt += `Subtotal              ${b.total}.00\n`;
-  txt += "================================\n";
-  txt += `TOTAL Rs              ${b.total}.00\n`;
-  txt += "================================\n";
-  txt += "   ------------------------\n";
-  txt += "\n";
-  txt += "       Thank you\n";
-  txt += "      Visit Again\n";
-  txt += "\n";
-  txt += " *~*~*~*~*~*~*~*~*~*~*~*~*~*\n";
-  txt += "\n";
-  txt += "   Have a great day!\n";
-  txt += "We serve fresh juices & snacks daily\n";
-  return txt;
-}
-function printToRawBT(){
-  let text = formatFor58mm();
-  if(navigator.share){
-    navigator.share({title:'MS Emporium Bill', text:text});
-  }else{
-    navigator.clipboard.writeText(text).then(()=>alert('✅ Bill Copied!'));
-  }
+function printReceipt58mm() {
+  const receiptDiv = document.getElementById('rec');
+  if (!receiptDiv) { alert('Bill illa!'); return; }
+  
+  // Modal-a close pannu - print window mattum irukkanum
+  let modalEl = document.getElementById('recModal');
+  let modal = bootstrap.Modal.getInstance(modalEl);
+  if(modal) modal.hide();
+  
+  const receiptHTML = receiptDiv.innerHTML;
+  
+  const win = window.open('', '_blank', 'width=380,height=700');
+  win.document.write(`
+    <html>
+    <head>
+      <title>MS Emporium - Bill</title>
+      <style>
+        @page { size: 58mm auto; margin: 0; }
+        body { width: 58mm; margin: 0; padding: 3mm; font-family: monospace; font-size: 11px; background: white; color: black; }
+        .receipt { width: 54mm; margin: 0 auto; }
+        .d-flex { display: flex; justify-content: space-between; }
+        .text-center { text-align: center; }
+        hr { border-top: 1px dashed #000; margin: 5px 0; }
+        .fw-bold { font-weight: bold; }
+        .small { font-size: 9px; }
+        button { display: none; }
+      </style>
+    </head>
+    <body>
+      <div class="receipt">${receiptHTML}</div>
+      <script>
+        window.onload = function(){ 
+          setTimeout(() => { window.print(); window.close(); }, 800);
+        }
+      <\/script>
+    </body>
+    </html>
+  `);
+  win.document.close();
 }
 
-function isIOS(){ 
-  try{
-    return /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform==='MacIntel' && navigator.maxTouchPoints>1);
-  }catch(e){ return false; }
-}
 
-// Global ku expose pannu - GitHub la function not defined varakudadhu
-window.viewB = viewB;
-window.openBillModal = openBillModal;
-window.closeBillModal = closeBillModal;
-window.editB = editB;
-window.delB = delB;
+function isIOS(){ return /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform==='MacIntel' && navigator.maxTouchPoints>1); }
 
 function openBillModal(){
-  try{
-    let modal = document.getElementById('billModal');
-    if(!modal){ alert('billModal missing'); return; }
-    // Bootstrap modal-a bypass pannu - custom modal dhan
-    modal.style.display = 'flex';
-    modal.style.position = 'fixed';
-    modal.style.top = '0';
-    modal.style.left = '0';
-    modal.style.width = '100%';
-    modal.style.height = '100%';
-    modal.style.background = 'rgba(0,0,0,0.6)';
-    modal.style.zIndex = '99999';
-    modal.style.justifyContent = 'center';
-    modal.style.alignItems = 'center';
-    // Null check - GitHub la pdfBtn illa na crash aagathu
-    let pdfBtn = document.getElementById('pdfBtn');
-    let hint = document.getElementById('iosHint');
-    let printBtn = document.getElementById('printBtn');
-    if(pdfBtn){
-      try{
-        if(isIOS()) pdfBtn.style.display='flex';
-        else pdfBtn.style.display='none';
-      }catch(e){}
-    }
-    if(hint){
-      try{
-        if(isIOS()) hint.style.display='block';
-        else hint.style.display='none';
-      }catch(e){}
-    }
-  }catch(err){
-    console.error('openBillModal error:', err);
+  document.getElementById('billModal').style.display='flex';
+  var pdfBtn = document.getElementById('pdfBtn');
+  var hint = document.getElementById('iosHint');
+  var printBtn = document.getElementById('printBtn');
+  if(isIOS()){
+    pdfBtn.style.display='flex';
+    hint.style.display='block';
+    printBtn.innerHTML='🖨️ Print';
+  }else{
+    pdfBtn.style.display='none';
+    hint.style.display='none';
   }
 }
 
 function closeBillModal(){
-  try{
-    let modal=document.getElementById('billModal'); 
-    if(modal) modal.style.display='none';
-  }catch(e){}
+  document.getElementById('billModal').style.display='none';
 }
-
 
 function handlePrint(){
-  if(!currentViewBillId){ alert('View a bill first!'); return; }
-  let b = bills.find(x=>x.id==currentViewBillId);
-  if(!b) return;
-  
-  document.getElementById('billModal').style.display='none';
-
-  // ITEMS alignment fix - table maadiri
-  let itemsHTML = `
-    <div style="display:flex; justify-content:space-between; font-weight:bold; border-bottom:1px solid #000; padding-bottom:3px; margin-bottom:5px;">
-      <span style="width:55%; text-align:left;">ITEM</span>
-      <span style="width:15%; text-align:center;">QTY</span>
-      <span style="width:30%; text-align:right;">AMOUNT</span>
-    </div>
-  `;
-  
-  b.items.forEach(i=>{
-    let name = i.name;
-    let qty = i.qty;
-    let price = i.price * qty;
-    
-    // Lengthy name 25 chars ku mela irundha wrap
-    if(name.length > 22){
-      // First line - name part
-      itemsHTML += `
-        <div style="display:flex; justify-content:space-between; margin-bottom:2px;">
-          <span style="width:55%; text-align:left; word-wrap:break-word;">${name}</span>
-          <span style="width:15%; text-align:center;">${qty}</span>
-          <span style="width:30%; text-align:right;">${price}.00</span>
-        </div>
-        <div style="display:flex; justify-content:space-between; margin-bottom:5px; font-size:11px; color:#555;">
-          <span style="width:55%;">${qty} x Rs. ${i.price}.00</span>
-          <span style="width:45%;"></span>
-        </div>
-      `;
+  var billEl = document.getElementById('rec');
+  var text = billEl.innerText;
+  if(isIOS()){
+    saveAsPDF_iOS();
+  }else{
+    if(navigator.share){
+      navigator.share({title:'MS Emporium Bill', text:text});
     }else{
-      // Short name - single line
-      itemsHTML += `
-        <div style="margin-bottom:5px;">
-          <div style="display:flex; justify-content:space-between;">
-            <span style="width:55%; text-align:left;">${name}</span>
-            <span style="width:15%; text-align:center;">${qty}</span>
-            <span style="width:30%; text-align:right;">${price}.00</span>
-          </div>
-          <div style="font-size:11px; color:#555; margin-left:2px;">${qty} x Rs. ${i.price}.00</div>
-        </div>
-      `;
+      window.print();
     }
-  });
-  // PARCEL CHARGE PRINT - IDHA INGA ADD PANNU
-let parcelChargePrint = b.parcelCharge || 0;
-let parcelHTML = '';
-if(parcelChargePrint > 0){
-  parcelHTML = `
-    <div style="display:flex; justify-content:space-between; padding:4px 0; font-size:13px; border-top:1px dashed #000; margin-top:5px;">
-      <span>Parcel Charges</span>
-      <span>Rs. ${parcelChargePrint}.00</span>
-    </div>
-  `;
-}
-
-  // Special lengthy case - Strawberry Falooda
-  if(b.items.length===1 && b.items[0].name.includes("Strawberry")){
-    itemsHTML = `
-      <div style="display:flex; justify-content:space-between; font-weight:bold; border-bottom:1px solid #000; padding-bottom:3px; margin-bottom:5px;">
-        <span style="width:55%;">ITEM</span>
-        <span style="width:15%; text-align:center;">QTY</span>
-        <span style="width:30%; text-align:right;">AMOUNT</span>
-      </div>
-      <div style="margin-bottom:3px;">Strawberry Falooda Extra Large</div>
-      <div style="margin-bottom:3px;">With Extra Icecream And Nuts</div>
-      <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
-        <span>Qty 1 x Rs 385.00</span>
-        <span style="font-weight:bold;">385.00</span>
-      </div>
-    `;
   }
-
-  let printWin = window.open('', '_blank');
-  printWin.document.write(`
-<html>
-<head><title>MS Emporium - ${b.billNo}</title>
-<style>
-  @page { size: 80mm auto; margin: 0; }
-  body { width: 72mm; margin: 0 auto; font-family: 'Courier New', monospace; font-size: 12px; line-height: 1.5; }
-  .center { text-align: center; } .bold { font-weight: bold; }
-  .line { border-top: 1px dashed #000; margin: 8px 0; }
-  .flex { display: flex; justify-content: space-between; }
-  .receipt { padding: 5mm; }
-</style>
-</head>
-<body>
-<div class="receipt">
-  <div class="center bold" style="font-size:22px;">MS EMPORIUM</div>
-  <div class="center bold" style="font-size:14px;">Ph: 7397468500</div>
-  <div class="line"></div>
-  <div class="flex"><span style="font-size:14px;">Bill</span><span>: ${b.billNo}</span></div>
-  <div class="flex"><span style="font-size:14px;">Date</span><span>: ${b.formattedDate || b.date}</span></div>
-  <div class="flex"><span style="font-size:14px;">Table</span><span>: ${b.tableNo}</span></div>
-  <div class="line"></div>
-  ${itemsHTML}
-  ${parcelHTML}
-  <div class="flex bold" style="font-size:14px; border-top:2px solid #000; border-bottom:2px solid #000; padding:5px 0; margin:5px 0;"><span>TOTAL</span><span>Rs. ${b.total}.00</span></div>
-  <div class="center" style="font-size:14px; margin-top:10px;">Thank you! Visit Again</div>
- <div class="line"></div>
-</div>
-<script>window.onload=function(){ setTimeout(()=>{window.print();},500); }<\/script>
-</body>
-</html>
-  `);
-  printWin.document.close();
 }
 
+function getBillTextForPDF(b){
+  var lines = [];
+  lines.push('MS EMPORIUM');
+  lines.push('Ph: 7397468500');
+  lines.push('------------------------------');
+  lines.push('Bill: ' + b.billNo);
+  lines.push('Date: ' + (b.date || b.billDate || ''));
+  lines.push('Table: ' + (b.tableNo || '-'));
+  lines.push('------------------------------');
+  b.items.forEach(function(i){
+    lines.push(i.name + ' x ' + i.qty);
+    lines.push('              Rs.' + (i.price*i.qty));
+  });
+  if(b.parcelCharge){ lines.push('Parcel Charges  Rs.' + b.parcelCharge); }
+  lines.push('------------------------------');
+  lines.push('TOTAL  Rs.' + b.total);
+  lines.push('Thank you! Visit Again');
+  return lines.join('\n');
+}
 
 function saveAsPDF_iOS(){
-  var billEl = document.getElementById('rec');
-  var billText = billEl.innerText;
-  const { jsPDF } = window.jspdf;
-  var doc = new jsPDF({orientation:'portrait', unit:'mm', format:[58,120]});
-  doc.setFont('courier','normal');
-  doc.setFontSize(9);
-  var lines = doc.splitTextToSize(billText, 54);
-  var y=5;
-  lines.forEach(l=>{ if(y>115){ doc.addPage([58,120]); y=5; } doc.text(l,2,y); y+=4; });
-  doc.save('BILL001.pdf');
-  setTimeout(function(){
-    if(confirm('PDF Downloaded! MPrinter la PDF open panni print pannava?')){
-      var blob = doc.output('blob');
-      var file = new File([blob], 'BILL001.pdf', {type:'application/pdf'});
-      navigator.share({files:[file], title:'Bill PDF'}).catch(()=>{});
+  // Bill Details modal la irundhu varum bodhu
+  var b = pendingPrintBill;
+  if(!b){
+    // View la irundhu paakira bill - rec div la irundhu edu
+    var billEl = document.getElementById('rec');
+    if(billEl){ alert('Preview la Save as PDF use pannunga. Home la Save & Print -> Preview la blue button irukum.'); }
+    return;
+  }
+  savePreviewAsPDF();
+}
+
+function savePreviewAsPDF(){
+  var b = pendingPrintBill;
+  if(!b){ alert('First Save & Print click pannunga - Preview varum'); return; }
+  var billText = getBillTextForPDF(b);
+  // jsPDF load aagala na - Safari Share vazhi print pannu
+  if(!window.jspdf){
+    alert('PDF library load aagala. Safari Share -> Print nu try pannunga. Page-a reload pannitu marubadiyum try pannunga.');
+    // Fallback: new window print
+    var w = window.open('', '_blank');
+    if(w){
+      w.document.write('<html><body style="font-family:monospace;white-space:pre-wrap;font-size:18px">'+billText.replace(/</g,'&lt;')+'</body></html>');
+      w.document.close();
+      setTimeout(function(){ try{ w.print(); }catch(e){} }, 500);
     }
-  },500);
+    return;
+  }
+  try{
+    var jsPDF = window.jspdf.jsPDF;
+    var doc = new jsPDF({orientation:'portrait', unit:'mm', format:[58, 200]});
+    doc.setFont('courier','normal');
+    doc.setFontSize(11);
+    var lines = doc.splitTextToSize(billText, 54);
+    var y = 6;
+    lines.forEach(function(l){
+      if(y > 190){ doc.addPage([58,200]); y = 6; }
+      doc.text(l, 2, y); y += 5;
+    });
+    var fileName = (b.billNo || 'BILL001') + '.pdf';
+    doc.save(fileName);
+    // Bill-a save pannidu - Print madhiri ye
+    setTimeout(function(){
+      if(confirm('PDF Download aachu! Ippo bill-a save pannava? Yes kudutha Table clear aagum.')){
+        confirmPrintAfterPDF();
+      }
+    }, 800);
+  }catch(e){
+    alert('PDF error: ' + e.message + ' - Safari Share -> Print nu try pannunga');
+  }
+}
+
+function confirmPrintAfterPDF(){
+  if(!pendingPrintBill) return;
+  var b = pendingPrintBill;
+  document.getElementById('previewModal').style.display='none';
+  bills.push(b); localStorage.setItem('ms_bills', JSON.stringify(bills));
+  tableOrders[currentTable]=[]; parcelOrders[currentTable]=0; parcelClicks[currentTable]=0; syncCart();
+  pendingPrintBill=null; updateBillNo(); renderCart(); renderSaved(); showHome();
+  var sm=document.getElementById('successMsgHome'); if(sm){ sm.innerHTML='✅ '+b.billNo+' Saved & PDF aachu! Files la paathu MPrinter la print pannunga'; sm.style.display='block'; setTimeout(()=>sm.style.display='none',5000); }
 }
 
  
 
 
+
+function addParcel(v){ if(!currentTable){ alert('First Table select pannunga! Home la Table 1 click pannunga'); showHome(); return; } parcelOrders[currentTable]+=v; parcelClicks[currentTable]++; renderCart(); }
+function clearParcel(){ if(!currentTable) return; parcelOrders[currentTable]=0; parcelClicks[currentTable]=0; renderCart(); }
+
+function saveAndPrint(){
+  if(!currentTable){ alert('Table select pannunga! Home la Table 1 click pannunga'); showHome(); return false; }
+  if(cart.length==0){ alert('Add items first!'); return false; }
+  let tno=tableLabel(currentTable); let billDateEl=document.getElementById('billDate'); let billDateInput=billDateEl?billDateEl.value:'';
+  if(!billDateInput){ alert('Select Bill Date'); return false; }
+  let parcel=parcelOrders[currentTable]||0; let total=cart.reduce((s,c)=>s+c.price*c.qty,0)+parcel;
+  let bno=document.getElementById('bno')?document.getElementById('bno').textContent:'BILL'+String(bills.length+1).padStart(3,'0');
+  pendingPrintBill={id:Date.now(), billNo:bno, billDate:billDateInput, date:new Date().toLocaleString('en-IN'), tableNo:tno, items:JSON.parse(JSON.stringify(cart)), parcelCharge:parcel, total, count:cart.length};
+  // PRINT PREVIEW POPUP - Print ku munnadi
+  let pb=document.getElementById('previewBody');
+  pb.innerHTML=`<div class="d-flex justify-content-between"><span>Bill No</span><b>${bno}</b></div><div class="d-flex justify-content-between"><span>Date</span><span>${pendingPrintBill.date}</span></div><div class="d-flex justify-content-between"><span>Table</span><b>${tno}</b></div><hr>${pendingPrintBill.items.map(i=>`<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:4px;margin:4px 0;text-align:left"><span style="font-weight:600;flex:1">${i.name} x ${i.qty}</span><span style="white-space:nowrap;padding-left:4px">Rs.${i.price*i.qty}</span></div>`).join('')}${parcel?`<div class="d-flex justify-content-between"><span>Parcel Charges</span><span>Rs.${parcel}</span></div>`:''}<hr><div class="d-flex justify-content-between fw-bold fs-5"><span>Total</span><span>Rs.${total}</span></div>`;
+  document.getElementById('previewModal').style.display='flex';
+  return false;
+}
+function closePreview(){ document.getElementById('previewModal').style.display='none'; pendingPrintBill=null; }
+function confirmPrint(){
+  if(!pendingPrintBill) return; let b=pendingPrintBill; document.getElementById('previewModal').style.display='none';
+  bills.push(b); localStorage.setItem('ms_bills', JSON.stringify(bills));
+  // Print window - 58mm
+  let w=window.open('','_blank'); if(!w){ alert('iPad popup block aagiduchu. Preview la blue Save as PDF button-a click pannunga.'); return; } if(w){ w.document.write(`<html><head><style>@page{size:58mm auto;margin:0} body{font-family:monospace;width:58mm;margin:0 auto;padding:2mm;text-align:center;font-size:16px;line-height:1.4;color:#000} h3{font-size:22px;margin:2px 0} p{font-size:15px;margin:2px 0} .item{margin:3px 0;text-align:left} .item-name{font-size:16px;font-weight:600;word-wrap:break-word} .item-line{display:flex;justify-content:space-between;font-size:16px}</style></head><body><h3>MS EMPORIUM</h3><p>Ph: 7397468500</p><hr><p style="text-align:left;font-size:15px">Bill: ${b.billNo}<br>Date: ${b.date}<br>Table: ${b.tableNo || '-'}</p><hr>${b.items.map(i=>`<div class="item" style="display:flex;justify-content:space-between;align-items:flex-start;gap:4px;margin:4px 0;text-align:left"><span style="font-size:16px;font-weight:600;word-wrap:break-word;flex:1">${i.name} x ${i.qty}</span><span style="font-size:16px;white-space:nowrap;padding-left:4px">Rs.${i.price*i.qty}</span></div>`).join('')}${b.parcelCharge?`<div class="item-line">Parcel Charges <span>Rs.${b.parcelCharge}</span></div>`:''}<hr><div style="display:flex;justify-content:space-between;font-weight:bold;font-size:19px">TOTAL <span>Rs.${b.total}</span></div><p style="font-size:15px">Thank you! Visit Again</p></body></html>`); w.document.close(); setTimeout(()=>{ try{w.print()}catch(e){} },500); }
+  // Table clear - Point 5/6: indha table mattum clear, vera table safe
+  tableOrders[currentTable]=[]; parcelOrders[currentTable]=0; parcelClicks[currentTable]=0; syncCart();
+  pendingPrintBill=null; updateBillNo(); renderCart(); renderSaved(); showHome();
+  let sm=document.getElementById('successMsgHome'); if(sm){ sm.innerHTML='✅ '+b.billNo+' Saved & Print aachu! Table: '+b.tableNo; sm.style.display='block'; setTimeout(()=>sm.style.display='none',4000); }
+}
