@@ -66,18 +66,18 @@ let products = [
   {id:51, name:'Gems Milk Shake', cat:'Milkshakes', price:90, img:'milkshakes/Gems Milk Shake.jpg'},
   {id:54, name:'Lychi Milk Shake', cat:'Milkshakes', price:90, img:'milkshakes/Lychi Milk Shake.jpg'},
   {id:55, name:'Tutti Fruti Milk Shake', cat:'Milkshakes', price:90, img:'milkshakes/tutti.jpg'},
-  {id:181, name:'Apple & Dates Milk Shake', cat:'Milkshakes', price:100, img:'milkshakes/Dates Milk Shake.jpg'},
-  {id:182, name:'Dates & Papaya Milk Shake', cat:'Milkshakes', price:100, img:'milkshakes/Dates Milk Shake.jpg'},
-  {id:183, name:'Dates & Fig Milk Shake', cat:'Milkshakes', price:100, img:'milkshakes/Dates Milk Shake.jpg'},
-  {id:184, name:'Dates & Banana Milk Shake', cat:'Milkshakes', price:100, img:'milkshakes/Dates Milk Shake.jpg'},
-  {id:185, name:'Choco Sapota Milk Shake', cat:'Milkshakes', price:100, img:'milkshakes/Dates Milk Shake.jpg'},
-  {id:186, name:'Choco Banana Milk Shake', cat:'Milkshakes', price:100, img:'milkshakes/Dates Milk Shake.jpg'},
-  {id:187, name:'Choco Apple Milk Shake', cat:'Milkshakes', price:100, img:'milkshakes/Dates Milk Shake.jpg'},
-  {id:188, name:'Choco Fig Milk Shake', cat:'Milkshakes', price:100, img:'milkshakes/Dates Milk Shake.jpg'},
-  {id:189, name:'Choco Boost Milk Shake', cat:'Milkshakes', price:100, img:'milkshakes/Dates Milk Shake.jpg'},
-  {id:190, name:'Choco Nuts Milk Shake', cat:'Milkshakes', price:100, img:'milkshakes/Dates Milk Shake.jpg'},
-  {id:191, name:'Sarja Milk Shake', cat:'Milkshakes', price:80, img:'milkshakes/Dates Milk Shake.jpg'},
-  {id:192, name:'MS Emporium Special Milk Shake', cat:'Milkshakes', price:150, img:'milkshakes/Dates Milk Shake.jpg'},
+  {id:181, name:'Apple & Dates Milk Shake', cat:'Milkshakes', price:100, img:'milkshakes/datesapple.jpg'},
+  {id:182, name:'Dates & Papaya Milk Shake', cat:'Milkshakes', price:100, img:'milkshakes/datespa.jpg'},
+  {id:183, name:'Dates & Fig Milk Shake', cat:'Milkshakes', price:100, img:'milkshakes/datesfig.jpg'},
+  {id:184, name:'Dates & Banana Milk Shake', cat:'Milkshakes', price:100, img:'milkshakes/datesba.jpg'},
+  {id:185, name:'Choco Sapota Milk Shake', cat:'Milkshakes', price:100, img:'milkshakes/chocosap.jpg'},
+  {id:186, name:'Choco Banana Milk Shake', cat:'Milkshakes', price:100, img:'milkshakes/chocoba.jpg'},
+  {id:187, name:'Choco Apple Milk Shake', cat:'Milkshakes', price:100, img:'milkshakes/chocoapp.jpg'},
+  {id:188, name:'Choco Fig Milk Shake', cat:'Milkshakes', price:100, img:'milkshakes/chocofig.jpg'},
+  {id:189, name:'Choco Boost Milk Shake', cat:'Milkshakes', price:100, img:'milkshakes/chocoboo.jpg'},
+  {id:190, name:'Choco Nuts Milk Shake', cat:'Milkshakes', price:100, img:'milkshakes/choconut.jpg'},
+  {id:191, name:'Sarja Milk Shake', cat:'Milkshakes', price:80, img:'milkshakes/sarja.jpg'},
+  {id:192, name:'MS Emporium Special Milk Shake', cat:'Milkshakes', price:150, img:'milkshakes/MS.jpg'},
  
 
 
@@ -206,12 +206,43 @@ let products = [
 
 ];
 
+
 let bills=JSON.parse(localStorage.getItem('ms_bills')||'[]'), curPage=1, perPage=8, curCat='All', sText='', editingId=null;
 let currentTable=null; // 'T1'..'T5' - Paper Point 1
 let tableOrders={T1:[],T2:[],T3:[],T4:[],T5:[],T6:[],T7:[],T8:[],T9:[],T10:[]}; // 10 Tables - Per-table bill store
 let parcelOrders={T1:0,T2:0,T3:0,T4:0,T5:0,T6:0,T7:0,T8:0,T9:0,T10:0}, parcelClicks={T1:0,T2:0,T3:0,T4:0,T5:0,T6:0,T7:0,T8:0,T9:0,T10:0};
 let pendingPrintBill=null;
 let cart=[]; // alias - always points to currentTable cart
+
+// Per-Table Bill No
+let nextBillSeq = parseInt(localStorage.getItem('ms_next_bill_seq')||'0', 10);
+let tableBillNos = JSON.parse(localStorage.getItem('ms_table_bill_nos')||'{}');
+// ===== INGA PODANUM - Declaration ku keezha, function ku mela =====
+if(bills.length===0 && Object.keys(tableBillNos).length===0){
+  nextBillSeq = 0;
+  localStorage.setItem('ms_next_bill_seq', '0');
+}
+
+function getOrCreateBillNoForTable(t){
+  if(!tableBillNos[t]){
+    nextBillSeq += 1;
+    tableBillNos[t] = 'BILL'+String(nextBillSeq).padStart(3,'0');
+    localStorage.setItem('ms_table_bill_nos', JSON.stringify(tableBillNos));
+    localStorage.setItem('ms_next_bill_seq', String(nextBillSeq));
+  }
+  return tableBillNos[t];
+}
+function clearBillNoForTable(t){
+  if(t && tableBillNos[t]){
+    delete tableBillNos[t];
+    localStorage.setItem('ms_table_bill_nos', JSON.stringify(tableBillNos));
+  }
+}
+// Yaaru first print pannuraro avangalukku adutha number
+function getFinalPrintBillNo(){
+  return 'BILL' + String(bills.length + 1).padStart(3,'0');
+}
+
 function syncCart(){ if(currentTable) cart=tableOrders[currentTable]; else cart=[]; }
 function tableLabel(t){ if(!t) return '-'; return 'T' + t.replace('T',''); }
 // Table1 -> T1 ✅, Table2 -> T2 ✅, Table10 -> T10 ✅
@@ -226,9 +257,20 @@ function getNowIST(){
 
 
 setInterval(()=>{ document.getElementById('dt').textContent=getNowIST(); let dh=document.getElementById('dtHome'); if(dh) dh.textContent=getNowIST(); },1000);
-function updateBillNo(){ let n='BILL'+String(bills.length+1).padStart(3,'0'); let a=document.getElementById('bno'); if(a)a.textContent=n; let h=document.getElementById('bnoHome'); if(h)h.textContent=n; }
+function updateBillNo(){var n;
+  if(currentTable){
+    n = getOrCreateBillNoForTable(currentTable); // Global ah maathaadha
+  } else {
+    n = 'BILL'+String(nextBillSeq+1).padStart(3,'0');
+  }
+  document.getElementById('bno').textContent = n;
+  document.getElementById('bnoHome').textContent = n;
+}
 function renderHomeTables(){ let el=document.getElementById('tablesHome'); if(!el) return; el.innerHTML=['T1','T2','T3','T4','T5','T6','T7','T8','T9','T10'].map(t=>{ let items=tableOrders[t]; let cnt=items.reduce((s,x)=>s+x.qty,0); let tot=items.reduce((s,x)=>s+x.qty*x.price,0)+(parcelOrders[t]||0); return `<div class="col-3 col-md-3"><div class="product-box" style="height:96px !important;min-height:96px;padding:8px !important;cursor:pointer;${currentTable===t?'border:2px solid #16a34a !important;background:#f0fdf4':''}" onclick="selectTable('${t}')"><div style="font-size:16px;font-weight:800;">Table ${t.replace('T','')}</div><div style="font-size:11px;color:#666;"></div><div><span class="badge ${cnt?'bg-success':'bg-secondary'}" style="font-size:20px;">${cnt?'Occupied':'Free'}</span></div></div></div>`; }).join(''); }
-function selectTable(t){ currentTable=t; syncCart(); let tno=document.getElementById('tno'); if(tno)tno.value=tableLabel(t); let th=document.getElementById('tnoHome'); if(th)th.value=tableLabel(t); let b=document.getElementById('menuTableBadge'); if(b)b.textContent='Table: Table'+t.replace('T','')+' - '+tableLabel(t); renderHomeTables(); renderCart(); showPage('billing'); }
+function selectTable(t){ currentTable=t; 
+  getOrCreateBillNoForTable(t); // Table ku Bill No lock pannu
+  updateBillNo();
+  syncCart(); let tno=document.getElementById('tno'); if(tno)tno.value=tableLabel(t); let th=document.getElementById('tnoHome'); if(th)th.value=tableLabel(t); let b=document.getElementById('menuTableBadge'); if(b)b.textContent='Table: Table'+t.replace('T','')+' - '+tableLabel(t); renderHomeTables(); renderCart(); showPage('billing'); }
 function showHome(){ document.getElementById('homePage').classList.remove('d-none'); document.getElementById('billingPage').classList.add('d-none'); document.getElementById('savedPage').classList.add('d-none'); renderHomeTables(); renderCart(); }
 
 updateBillNo();
@@ -323,7 +365,7 @@ function saveBill(){
   }
   
   // NEW BILL MODE - Pudhu bill create pannu
-  let bnoEl=document.getElementById('bno'); let bno=bnoEl?bnoEl.textContent:'BILL'+String(bills.length+1).padStart(3,'0');
+ let bno = getFinalPrintBillNo();
   let bill={id:Date.now(), billNo:bno, billDate:billDateInput, formattedDate:formattedDate, date:getNowIST(), tableNo:tno, items:[...cart], parcelCharge:parcel, total, count:cart.length};
   bills.push(bill);
   localStorage.setItem('ms_bills', JSON.stringify(bills));
@@ -349,9 +391,9 @@ function renderSaved(){
   document.getElementById('cnt').textContent=bills.length;
   document.getElementById('cnt2').textContent=bills.length;
   let body=document.getElementById('savedBody');
-  if(bills.length==0){ body.innerHTML='<tr><td colspan="6" class="text-center text-muted py-3">No bills yet</td></tr>'; return; }
+  if(bills.length==0){ body.innerHTML='<tr><td colspan="5" class="text-center text-muted py-3">No bills yet</td></tr>'; return; }
   // FIXED: use count, not undefined, handle both count and itemsCount
-  body.innerHTML=bills.map(b=>{ let itemCount = b.count || b.itemsCount || b.items?.length || 0; return `<tr><td>${b.billNo}</td><td>${b.date}</td><td>${b.tableNo}</td><td>${itemCount} items</td><td>Rs.${b.total}</td><td><button class="btn btn-sm btn-outline-dark me-1" onclick="viewB(${b.id})">View</button><button class="btn btn-sm btn-outline-success me-1" onclick="editB(${b.id})">Edit</button><button class="btn btn-sm btn-outline-danger" onclick="delB(${b.id})">Delete</button></td></tr>`; }).join('');
+  body.innerHTML=bills.map(b=>{ let itemCount = b.count || b.itemsCount || b.items?.length || 0; return `<tr><td>${b.billNo}</td><td>${b.date}</td><td>${b.tableNo}</td><td>${itemCount} items</td><td>Rs.${b.total}</td></tr>`; }).join('');
 }
 function viewB(id){
   let b=bills.find(x=>x.id==id);
@@ -371,10 +413,76 @@ function editB(id){
 }
 function delB(id){ if(confirm('Delete this bill?')){ bills=bills.filter(b=>b.id!=id); localStorage.setItem('ms_bills',JSON.stringify(bills)); updateBillNo(); renderSaved(); } }
 function showPage(p){ document.getElementById('homePage').classList.toggle('d-none', true); document.getElementById('billingPage').classList.toggle('d-none', p!='billing'); document.getElementById('savedPage').classList.toggle('d-none', p!='saved'); if(p=='saved') renderSaved(); if(p=='billing' && !currentTable){ /* Menu ku Table thevai - Home ku anuppu */ } }
+
 function downloadReport(){
   if(bills.length==0){ alert('No bills'); return; }
-  let txt=''; bills.forEach(b=>{ let c=b.count||b.itemsCount||b.items?.length||0; txt+=`==================================\nMS Emporium\nJUICES & SHAKES - FRESH & COLD\n----------------------------------\nBill No: ${b.billNo}\nDate: ${b.date}\nTable No: ${b.tableNo}\n----------------------------------\nITEM              QTY   AMT\n----------------------------------\n`; b.items.forEach(i=>{ txt+=`${i.name.padEnd(18)} ${String(i.qty).padEnd(4)} Rs.${i.price*i.qty}\n`; }); txt+=`----------------------------------\nTotal (${c} items)        Rs.${b.total}\n----------------------------------\nThank you! Visit again\nMS Emporium\n==================================\n\n`; });
-  let blob=new Blob([txt],{type:'text/plain'}); let a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='MS_Emporium_Bills_'+new Date().toLocaleDateString().replace(/\//g,'-')+'.txt'; a.click();
+
+  var todayStr = new Date().toLocaleDateString('en-IN').replace(/\//g,'.'); // 19.11.2026
+  var html = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel"><head><meta charset="utf-8"><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>MS Emporium Report</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body>';
+  html += '<table border="0" cellpadding="5" cellspacing="0" style="font-family:Calibri;font-size:11pt;">';
+
+  // Row 1 - Title - Screenshot maariye
+  html += '<tr><td colspan="6" style="font-weight:bold;font-size:12pt;text-align:center;">MS Emporium - Juices &amp; Snacks</td></tr>';
+  // Row 2 - Date
+  html += '<tr><td colspan="6" style="font-weight:bold;text-align:center;">Date - '+todayStr+'</td></tr>';
+  // Row 3 - Blank
+  html += '<tr><td colspan="6">&nbsp;</td></tr>';
+  // Row 4 - Header - Green + Bold - Screenshot maariye
+  html += '<tr>'
+    + '<td style="font-weight:bold;color:#1F7A33;border-bottom:1px solid #999;">Bill No</td>'
+    + '<td style="font-weight:bold;color:#1F7A33;border-bottom:1px solid #999;">Date/Time</td>'
+    + '<td style="font-weight:bold;color:#1F7A33;text-align:center;border-bottom:1px solid #999;">Table No</td>'
+    + '<td style="font-weight:bold;color:#1F7A33;text-align:center;border-bottom:1px solid #999;">Item</td>'
+    + '<td style="font-weight:bold;color:#1F7A33;text-align:center;border-bottom:1px solid #999;">Qty</td>'
+    + '<td style="font-weight:bold;color:#1F7A33;text-align:center;border-bottom:1px solid #999;">Amount</td>'
+    + '</tr>';
+
+  bills.forEach(function(b){
+    (b.items||[]).forEach(function(i, idx){
+      html += '<tr>'
+        + '<td>'+(idx===0 ? b.billNo : '')+'</td>'
+        + '<td>'+(idx===0 ? b.date : '')+'</td>'
+        + '<td style="text-align:center;">'+(idx===0 ? b.tableNo : '')+'</td>'
+        + '<td>'+i.name+'</td>'
+        + '<td style="text-align:center;">'+i.qty+'</td>'
+        + '<td style="text-align:center;">'+(i.price*i.qty)+'</td>'
+        + '</tr>';
+    });
+    if(b.parcelCharge){
+      html += '<tr><td></td><td></td><td></td><td>Parcel Charges</td><td style="text-align:center;">1</td><td style="text-align:center;">'+b.parcelCharge+'</td></tr>';
+    }
+    // Total Row - Screenshot maariye
+    html += '<tr>'
+      + '<td style="border-bottom:1px solid #999;">&nbsp;</td>'
+      + '<td style="border-bottom:1px solid #999;">&nbsp;</td>'
+      + '<td style="border-bottom:1px solid #999;">&nbsp;</td>'
+      + '<td style="border-bottom:1px solid #999;">&nbsp;</td>'
+      + '<td style="font-weight:bold;text-align:center;border-bottom:1px solid #999;">Total</td>'
+      + '<td style="font-weight:bold;text-align:center;border-bottom:1px solid #999;">'+b.total+'</td>'
+      + '</tr>';
+    // Blank separator row - Screenshot la BILL001 ku keezha irukura gap
+    html += '<tr><td colspan="6" style="border-bottom:1px solid #999;">&nbsp;</td></tr>';
+  });
+
+  html += '</table></body></html>';
+
+  var blob = new Blob([html], {type:'application/vnd.ms-excel;charset=utf-8;'});
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'MS_Emporium_Report_'+new Date().toLocaleDateString('en-IN').replace(/\//g,'-')+'.xls';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+
+  // Download aana apram Saved Bills clear
+  setTimeout(function(){
+    if(confirm('Report Downloaded')){
+      bills = [];
+      localStorage.setItem('ms_bills', JSON.stringify(bills));
+      localStorage.setItem('ms_next_bill_seq','0'); nextBillSeq = 0;
+      localStorage.setItem('ms_table_bill_nos', JSON.stringify({})); tableBillNos = {};
+      renderSaved(); updateBillNo();
+      alert('Saved Bills Cleared! Next Bill Again Starts From BILL001.');
+    }
+  }, 500);
 }
 renderCats(); renderGrid(); renderSaved(); renderHomeTables(); showHome(); 
 let _bd=document.getElementById('billDate'); if(_bd && !_bd.value) _bd.value=getTodayIST(); let _bdh=document.getElementById('billDateHome'); if(_bdh && !_bdh.value) _bdh.value=getTodayIST();
@@ -439,8 +547,49 @@ function openBillModal(){
   }
 }
 
+// T2 BILL001 nu print aagiduchu na,
+// meedhi irukura T1 display BILL002 aagidum
+function reassignDisplayAfterPrint(){
+  // Pending tables-a eduthu, BILL001, BILL002 nu thirumba arrange pannum
+}
+
+
 function closeBillModal(){
   document.getElementById('billModal').style.display='none';
+}
+
+// ===== Clear Bills Button - Download Report pakkathula =====
+function clearBills(){
+  if(bills.length===0){ alert('Clear panna bill ye illa!'); return; }
+
+  if(!confirm('⚠️ ' + bills.length + 'Clear All')){
+    return;
+  }
+
+  // 1. Bills ellam clear
+  bills = [];
+  localStorage.setItem('ms_bills', JSON.stringify(bills));
+
+  // 2. Bill No-vum BILL001 la irundhu thirumba start aagum
+  localStorage.setItem('ms_next_bill_seq','0');
+  nextBillSeq = 0;
+  localStorage.setItem('ms_table_bill_nos', JSON.stringify({}));
+  tableBillNos = {};
+
+  // 3. Table Orders-um clear
+  tableOrders = {T1:[],T2:[],T3:[],T4:[],T5:[],T6:[],T7:[],T8:[],T9:[],T10:[]};
+  parcelOrders = {T1:0,T2:0,T3:0,T4:0,T5:0,T6:0,T7:0,T8:0,T9:0,T10:0};
+  parcelClicks = {T1:0,T2:0,T3:0,T4:0,T5:0,T6:0,T7:0,T8:0,T9:0,T10:0};
+  cart = [];
+  currentTable = null;
+
+  // 4. Screen-a update pannu
+  renderSaved();
+  updateBillNo();
+  renderCart();
+  renderHomeTables();
+
+  alert('✅ Clear Saved Bills');
 }
 
 function handlePrint(){
@@ -507,7 +656,7 @@ function savePreviewAsPDF(){
   }
   try{
     var jsPDF = window.jspdf.jsPDF;
-    var doc = new jsPDF({orientation:'portrait', unit:'mm', format:[58, 200]});
+    var doc = new jsPDF({orientation:'portrait', unit:'mm', format:[58, 260]});
     var W = 58, CX = 29, L = 2, R = 56;
     var y = 7;
     function newPageIfNeeded(){ if(y > 188){ doc.addPage([58,200]); y = 7; } }
@@ -517,32 +666,44 @@ function savePreviewAsPDF(){
       doc.text(left, L, y); doc.text(right, R, y, {align:'right'}); y += 6; newPageIfNeeded();
     }
     // ===== PREVIEW MAARIYE - Header Center =====
-    doc.setFont('courier','bold'); doc.setFontSize(16);
+    doc.setFont('courier','bold'); doc.setFontSize(20);
     doc.text('MS EMPORIUM', CX, y, {align:'center'}); y += 6;
-    doc.setFont('courier','bold'); doc.setFontSize(11);
+    doc.setFont('courier','bold'); doc.setFontSize(15);
     doc.text('Ph: 7397468500', CX, y, {align:'center'}); y += 4;
     dashed();
     // Bill info - Preview la vara maari Left label / Right value
-    leftRight('Bill:', b.billNo, 12, true);
-    leftRight('Date:', b.date || b.billDate || '', 11, false);
-    leftRight('Table:', b.tableNo || '-', 12, true);
+    var datePart = '', timePart = '';
+if(b.billDate){
+  var d = String(b.billDate).split('-');
+  if(d.length===3) datePart = d[2] + '/' + d[1] + '/' + d[0];
+  else datePart = b.billDate;
+}
+if(b.date){
+  var parts = String(b.date).split(',');
+  if(!datePart) datePart = (parts[0]||'').trim();
+  timePart = (parts[1]||'').trim();
+}
+leftRight('Bill:', b.billNo, 14, false);
+leftRight('Date:', datePart, 14, false);
+leftRight('Time:', timePart, 14, false);
+leftRight('Table:', b.tableNo || '-', 14, false);
     dashed();
     // Items - Preview maari: Name full line, aprom x Qty left / Price right
     b.items.forEach(function(i){
-      doc.setFont('courier','bold'); doc.setFontSize(13);
+      doc.setFont('courier','bold'); doc.setFontSize(15);
       var nameLines = doc.splitTextToSize(i.name, 52);
       nameLines.forEach(function(nl){
         doc.text(nl, L, y); y += 6; newPageIfNeeded();
       });
-      leftRight('x ' + i.qty, 'Rs.' + (i.price*i.qty), 13, true);
+      leftRight('x ' + i.qty, 'Rs.' + (i.price*i.qty), 15, true);
       y += 1;
     });
     if(b.parcelCharge){ leftRight('Parcel Charges', 'Rs.'+b.parcelCharge, 12, true); }
     dashed();
     // TOTAL - Preview maari perusa bold
-    doc.setFont('courier','bold'); doc.setFontSize(16);
+    doc.setFont('courier','bold'); doc.setFontSize(20);
     doc.text('TOTAL', L, y); doc.text('Rs.'+b.total, R, y, {align:'right'}); y += 8;
-    doc.setFont('courier','bold'); doc.setFontSize(11);
+    doc.setFont('courier','normal'); doc.setFontSize(13);
     doc.text('Thank you! Visit Again', CX, y, {align:'center'}); y += 5;
     var fileName = (b.billNo || 'BILL001') + '.pdf';
     try{
@@ -590,7 +751,7 @@ let billDateEl=document.getElementById('billDate');
   let billDateInput=billDateEl?billDateEl.value:'';
   if(!billDateInput){ alert('Select Bill Date'); return false; }
   let parcel=parcelOrders[currentTable]||0; let total=cart.reduce((s,c)=>s+c.price*c.qty,0)+parcel;
-  let bno=document.getElementById('bno')?document.getElementById('bno').textContent:'BILL'+String(bills.length+1).padStart(3,'0');
+  let bno = getFinalPrintBillNo(); // ✅ Print = Final, bills.length + 1
   pendingPrintBill={id:Date.now(), billNo:bno, billDate:billDateInput, date:getNowIST(), tableNo:tno, items:JSON.parse(JSON.stringify(cart)), parcelCharge:parcel, total, count:cart.length};
   // PRINT PREVIEW POPUP - Print ku munnadi
   let pb=document.getElementById('previewBody');
@@ -603,17 +764,57 @@ function confirmPrint(){
   if(!pendingPrintBill) return; let b=pendingPrintBill; document.getElementById('previewModal').style.display='none';
   bills.push(b); localStorage.setItem('ms_bills', JSON.stringify(bills));
   // Print window - 58mm
- let w=window.open('','_blank'); if(w){ w.document.write(`<html><head><style>
-@page{size:58mm auto;margin:0}
-body{font-family:monospace;width:58mm;margin:0 auto;padding:2mm;text-align:center;font-size:16px;line-height:1.4;color:#000}
-h3{font-size:22px;margin:2px 0}
-p{font-size:15px;margin:2px 0}
-div{font-size:16px}
-</style></head><body><h3>MS EMPORIUM</h3><p>Ph: 7397468500</p><hr><p style="text-align:left;font-size:13px">Bill: ${b.billNo}<br>Date: ${b.date}<br>Table: ${b.tableNo || '-'}</p><hr>
-${b.items.map(i=>`<div class="item" style="display:flex;justify-content:space-between;align-items:flex-start;gap:4px;margin:4px 0;text-align:left"><span style="font-size:16px;font-weight:600;word-wrap:break-word;flex:1">${i.name} x ${i.qty}</span><span style="font-size:16px;white-space:nowrap;padding-left:4px">Rs.${i.price*i.qty}</span></div>`).join('')}
-${b.parcelCharge?`<div style="display:flex;justify-content:space-between;font-size:16px">Parcel Charges <span>Rs.${b.parcelCharge}</span></div>`:''}<hr><div style="display:flex;justify-content:space-between;font-weight:bold;font-size:19px">TOTAL <span>Rs.${b.total}</span></div><p style="font-size:15px">Thank you! Visit Again</p></body></html>`); w.document.close(); setTimeout(()=>{ try{w.print()}catch(e){} },500); }
-  // Table clear - Point 5/6: indha table mattum clear, vera table safe
+  let w=window.open('','_blank');
+  if(w){
+    w.document.write('<html><head><style>@page{size:58mm auto;margin:0} body{width:58mm;margin:0 auto;padding:3mm;background:#fff;}</style></head><body>'
+      + buildReceiptHTML(b)
+      + '<script>setTimeout(function(){ window.print(); }, 800);<\/script></body></html>');
+    w.document.close();
+  }
   tableOrders[currentTable]=[]; parcelOrders[currentTable]=0; parcelClicks[currentTable]=0; syncCart();
   pendingPrintBill=null; updateBillNo(); renderCart(); renderSaved(); showHome();
   let sm=document.getElementById('successMsgHome'); if(sm){ sm.innerHTML='✅ '+b.billNo+' Saved & Print aachu! Table: '+b.tableNo; sm.style.display='block'; setTimeout(()=>sm.style.display='none',4000); }
+}
+function buildReceiptHTML(b){
+  var datePart = '', timePart = '';
+  if(b.billDate){
+    var d = String(b.billDate).split('-');
+    if(d.length===3) datePart = d[2] + '/' + d[1] + '/' + d[0];
+    else datePart = b.billDate;
+  }
+  if(b.date){
+    var parts = String(b.date).split(',');
+    if(!datePart) datePart = (parts[0]||'').trim();
+    timePart = (parts[1]||'').trim();
+  }
+
+  // Item - Name oru line, x Qty + Price innoru line - x 1 piriyadhu!
+  var itemsHtml = (b.items||[]).map(function(i){
+    return '<div style="margin:8px 0;text-align:left;">'
+      + '<div style="font-size:14px;line-height:1.3;word-wrap:break-word;">'+i.name+'</div>'
+      + '<div style="display:flex;justify-content:space-between;font-size:14px;margin-top:2px;"><span>x '+i.qty+'</span><span>Rs.'+(i.price*i.qty)+'</span></div>'
+      + '</div>';
+  }).join('');
+
+  var parcelHtml = b.parcelCharge
+    ? '<div style="display:flex;justify-content:space-between;font-size:14px;margin:8px 0;"><span>Parcel Charges</span><span>Rs.'+b.parcelCharge+'</span></div>'
+    : '';
+
+  return '<div style="width:48mm;margin:0 auto;text-align:center;font-family:monospace;color:#000;">'
+    + '<div style="font-size:17px;font-weight:900;letter-spacing:0.5px;">MS Emporium</div>'
+    + '<div style="font-size:14px;font-weight:900;margin-top:3px;">Ph: 7397468500</div>'
+    + '<hr style="border:none;border-top:1px dashed #000;margin:8px 0;">'
+    + '<table style="width:100%;font-size:13px;text-align:left;line-height:1.6;border-collapse:collapse;">'
+    + '<tr><td>Bill</td><td style="text-align:right;">'+b.billNo+'</td></tr>'
+    + '<tr><td>Date</td><td style="text-align:right;">'+datePart+'</td></tr>'
+    + '<tr><td>Time</td><td style="text-align:right;">'+timePart+'</td></tr>'
+    + '<tr><td>Table Number</td><td style="text-align:right;">'+(b.tableNo||'-')+'</td></tr>'
+    + '</table>'
+    + '<hr style="border:none;border-top:1px dashed #000;margin:8px 0;">'
+    + itemsHtml + parcelHtml
+    + '<hr style="border:none;border-top:1px dashed #000;margin:8px 0;">'
+    + '<div style="display:flex;justify-content:space-between;font-size:15px;font-weight:900;"><span>Total</span><span>Rs.'+b.total+'</span></div>'
+    + '<div style="font-size:13px;margin-top:8px;">Thank You Visit Again</div>'
+    + '<div style="font-size:13px;letter-spacing:1px;">******</div>'
+    + '</div>';
 }
